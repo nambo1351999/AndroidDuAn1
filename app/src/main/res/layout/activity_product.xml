@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:gravity="center"
+    android:padding="20dp"
+    android:background="@drawable/img1"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".acitivity.ProductActivity">
+    <TextView
+        android:textSize="35dp"
+        android:text="My App"
+        android:textStyle="bold"
+        android:textColorHint="@color/colorWhite"
+
+        android:textColor="@color/colorWhite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <LinearLayout
+        android:layout_marginTop="30dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:layout_gravity="left"
+            android:src="@drawable/line"
+            android:layout_weight="1"
+            android:layout_width="150dp"
+            android:layout_height="25dp" />
+        <TextView
+            android:textSize="20dp"
+            android:layout_marginBottom="7dp"
+            android:textColor="@color/colorWhite"
+            android:layout_gravity="center"
+            android:text="Registraion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <ImageView
+            android:layout_weight="1"
+            android:layout_gravity="right"
+            android:src="@drawable/line"
+            android:layout_width="150dp"
+            android:layout_height="25dp" />
+
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/edMaMon"
+         android:layout_marginBottom="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:textColorHint="@color/colorWhite"
+        android:textColor="@color/colorWhite"
+        android:background="@drawable/edit"
+        android:hint="Mã Món Ăn" />
+    <EditText
+        android:id="@+id/edTenMon"
+        android:textColorHint="@color/colorWhite"
+        android:textColor="@color/colorWhite"
+        android:background="@drawable/edit"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginBottom="10dp"
+        android:hint="Tên Món Ăn" />
+
+
+    <EditText
+        android:textColorHint="@color/colorWhite"
+        android:textColor="@color/colorWhite"
+        android:background="@drawable/edit"
+        android:id="@+id/edMoTa"
+        android:layout_width="match_parent"
+        android:layout_marginBottom="10dp"
+        android:layout_height="50dp"
+        android:hint="Mô Tả" />
+    <EditText
+        android:textColorHint="@color/colorWhite"
+        android:textColor="@color/colorWhite"
+        android:background="@drawable/edit"
+        android:id="@+id/edGia"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:inputType="number"
+        android:layout_marginBottom="10dp"
+        android:hint="Giá" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2">
+        <Button
+            android:id="@+id/btnAddTheLoai"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/editboder"
+            android:onClick="addMaTheLoai"
+            android:text="Lưu" />
+        <Button
+            android:id="@+id/btnCancelUser"
+            android:onClick="Huy"
+            android:background="@drawable/editboder2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Huỷ" />
+    </LinearLayout>
+    <Button
+        android:id="@+id/btnShow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="Show"
+        android:text="Show" />
+
+
+</LinearLayout>

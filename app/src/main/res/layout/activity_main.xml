@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+
+    android:background="@drawable/img1"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+    <TextView
+        android:textSize="35dp"
+        android:text="My App"
+        android:textStyle="bold"
+
+        android:textColor="@color/colorWhite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <LinearLayout
+        android:layout_marginTop="30dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:layout_gravity="left"
+            android:src="@drawable/line"
+            android:layout_weight="1"
+            android:layout_width="150dp"
+            android:layout_height="25dp" />
+        <TextView
+            android:textSize="20dp"
+            android:layout_marginBottom="7dp"
+            android:textColor="@color/colorWhite"
+            android:layout_gravity="center"
+            android:text="Registraion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <ImageView
+            android:layout_weight="1"
+            android:layout_gravity="right"
+            android:src="@drawable/line"
+            android:layout_width="150dp"
+            android:layout_height="25dp" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <EditText
+            android:hint="FirstName"
+            android:layout_marginTop="20dp"
+            android:textColor="@color/colorWhite"
+            android:id="@+id/editFname"
+            android:textColorHint="@color/colorWhite"
+            android:layout_width="match_parent"
+            android:layout_height="50dp" />
+        <EditText
+            android:layout_marginTop="20dp"
+            android:textColor="@color/colorWhite"
+            android:hint="LastName"
+            android:textColorHint="@color/colorWhite"
+            android:id="@+id/editLname"
+            android:layout_width="match_parent"
+            android:layout_height="50dp" />
+
+        <EditText
+            android:layout_marginTop="20dp"
+            android:textColor="@color/colorWhite"
+            android:hint="Email"
+            android:id="@+id/editEmail"
+            android:textColorHint="@color/colorWhite"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            />
+        <EditText
+            android:hint="Passwod"
+            android:textColorHint="@color/colorWhite"
+            android:id="@+id/editPass"
+            android:textColor="@color/colorWhite"
+            android:inputType="textPassword"
+            android:layout_width="match_parent"
+            android:layout_height="50dp" />
+        <EditText
+            android:layout_marginTop="20dp"
+            android:textColor="@color/colorWhite"
+            android:hint="Phone"
+            android:textColorHint="@color/colorWhite"
+
+            android:id="@+id/editPhone"
+            android:layout_width="match_parent"
+            android:layout_height="50dp" />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <Button
+
+            android:text="Signup"
+            android:layout_weight="1"
+            android:id="@+id/btnSignup"
+            android:background="@drawable/editboder2"
+            android:textColor="@color/colorWhite"
+            android:layout_margin="30dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <Button
+
+            android:text="Login"
+            android:layout_weight="1"
+            android:id="@+id/btnLogin"
+            android:background="@drawable/editboder"
+            android:textColor="@color/colorWhite"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+
+
+
+</LinearLayout>

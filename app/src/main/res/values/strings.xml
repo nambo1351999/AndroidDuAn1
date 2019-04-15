@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">AndroidDuAn1</string>
+    <string name="title_activity_maps">Map</string>
+
+
+    <string name="login_mani">successful login</string>
+    <string name="login_check">successful login</string>
+    <string name="add_product">Thêm thành công</string>
+    <string name="delteproduct">Thêm thất bại</string>
+    <string name="from_check"> Bạn phải nhập đầy đủ thông</string>
+    <string name="udap_user">Lưu thành công</string>
+    <string name="main">Login successfulyy</string>
+    <string name="main2">Account or password incorrect</string>
+</resources>
