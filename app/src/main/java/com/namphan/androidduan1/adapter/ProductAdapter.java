@@ -12,19 +12,28 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.namphan.androidduan1.R;
-import com.namphan.androidduan1.acitivity.ListUserActivity;
-import com.namphan.androidduan1.acitivity.LoginActivity;
+
+import com.namphan.androidduan1.acitivity.ProductCartACT;
 import com.namphan.androidduan1.acitivity.UserDetail;
 import com.namphan.androidduan1.database.TheLoaiDAO;
 import com.namphan.androidduan1.model.TheLoai;
 
 import java.util.List;
 
+import javax.security.auth.callback.Callback;
+
+import static com.namphan.androidduan1.acitivity.ListProductActivity.dsTheLoai;
+import static com.namphan.androidduan1.acitivity.ListUserActivity.dsUser;
+
 public class ProductAdapter extends BaseAdapter {
     List<TheLoai> arrTheLoai;
     public Activity context;
     public LayoutInflater inflater;
     TheLoaiDAO theLoaiDAO;
+
+
+
+
 
     public ProductAdapter(Activity context, List<TheLoai> arrTheLoai) {
         super();
@@ -51,10 +60,10 @@ public class ProductAdapter extends BaseAdapter {
     }
 
     public static class ViewHolder {
-        ImageView img,imgchon;
+        ImageView img;
         TextView txtMaTheLoai;
         TextView txtTenTheLoai;
-        ImageView imgDelete;
+        ImageView imgDelete,imgChon;
     }
     @Override
     public View getView(final int position, View convertView, ViewGroup parent) {
@@ -69,27 +78,38 @@ public class ProductAdapter extends BaseAdapter {
             holder.imgDelete = (ImageView)convertView.findViewById(R.id.ivDelete);
 
 
+
+
+
+
             holder.imgDelete.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     theLoaiDAO.deleteTheLoaiByID(arrTheLoai.get(position).getMaMon());
-
-
-
 
                      arrTheLoai.remove(position);
                         notifyDataSetChanged();
             }
         });
         convertView.setTag(holder);
+
     }
 
     else
           holder=(ViewHolder)convertView.getTag();
 
-    TheLoai _entry = (TheLoai) arrTheLoai.get(position);
-    holder.img.setImageResource(R.drawable.cateicon);
-    holder.txtMaTheLoai.setText(_entry.getMaMon());
+    TheLoai _entry =  arrTheLoai.get(position);
+
+        if (position % 3 ==0) {
+            holder.img.setImageResource(R.drawable.cafeden);
+        }else if (position % 3 == 1){
+            holder.img.setImageResource(R.drawable.cappuccino);
+        }else {
+            holder.img.setImageResource(R.drawable.escup);
+        }
+
+
+    holder.txtMaTheLoai.setText(_entry.getGia()+" $");
     holder.txtTenTheLoai.setText(_entry.getTenMon());
          return convertView;
        }
@@ -101,4 +121,5 @@ public class ProductAdapter extends BaseAdapter {
     this.arrTheLoai = items;
     notifyDataSetChanged();
     }
+
 }

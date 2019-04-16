@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -7,20 +8,110 @@
     android:orientation="vertical"
     tools:context=".acitivity.ProductDetailActivity">
 
-
- <TextView
-     android:text="Tổng"
-     android:id="@+id/tvtong"
-     android:layout_width="match_parent"
-     android:layout_height="wrap_content" />
-    <Button
-        android:id="@+id/btnThanhToan"
-        android:layout_alignParentBottom="true"
-        android:text="Thanh toán"
+    <TextView
+        android:textSize="20dp"
+        android:textColor="@color/colorPink"
+        android:id="@+id/edMaTheLoai"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:hint="MaTheLoai" />
+
+    <ImageView
+        android:src="@drawable/img22"
+        android:layout_width="match_parent"
+        android:layout_height="300dp" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tên Món Ăn :"
+            android:textColor="@color/colorPink"
+            android:layout_weight="1"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_weight="1"
+            android:id="@+id/edTenTheLoai"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="TenTheLoai" />
+
+        <ImageView
+            android:layout_weight="1"
+             android:layout_gravity="right"
+            android:id="@+id/btnAddTheLoai"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/ic_shopping_cart_black_24dp"
+            android:backgroundTint="@color/colorPink"
+            android:onClick="addCart" />
+    </LinearLayout>
 
 
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_marginLeft="60dp"
+            android:text="Giá:"
+            android:textStyle="bold"
+            android:textColor="@color/colorPink"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    <TextView
+
+        android:layout_marginLeft="10dp"
+        android:text="Giá123"
+        android:textStyle="bold"
+        android:textSize="15dp"
+        android:textColor="@color/colorPink"
+        android:id="@+id/edViTri"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        />
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_marginLeft="60dp"
+            android:text="Mô Tả:"
+            android:textStyle="bold"
+            android:textColor="@color/colorPink"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_marginLeft="10dp"
+            android:textStyle="bold"
+            android:textColor="@color/colorPink"
+            android:id="@+id/edMoTa"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Mô Tả" />
+            />
+    </LinearLayout>
+
+
+
+    <Button
+        android:id="@+id/btnShow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="Show"
+        android:text="Show" />
 
 
 </LinearLayout>

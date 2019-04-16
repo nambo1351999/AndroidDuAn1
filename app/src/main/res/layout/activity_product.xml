@@ -33,7 +33,7 @@
             android:layout_marginBottom="7dp"
             android:textColor="@color/colorWhite"
             android:layout_gravity="center"
-            android:text="Registraion"
+            android:text="Product"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
         <ImageView

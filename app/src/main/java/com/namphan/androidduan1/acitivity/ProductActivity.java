@@ -1,5 +1,6 @@
 package com.namphan.androidduan1.acitivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -18,6 +19,7 @@ public class ProductActivity extends AppCompatActivity {
     EditText edMaMon,edTenMon,edGia,edMoTa;
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,7 +31,7 @@ public class ProductActivity extends AppCompatActivity {
 
     public void addMaTheLoai(View view) {
             theLoaiDAO=new TheLoaiDAO(ProductActivity.this);
-            TheLoai theLoai=new TheLoai(edTenMon.getText().toString(),edMaMon.getText().toString(),edMoTa.getText().toString(),edGia.getId());
+            TheLoai theLoai=new TheLoai(edMaMon.getText().toString(),edTenMon.getText().toString(),edMoTa.getText().toString(),Integer.parseInt(edGia.getText().toString()));
             try {
                 if (validateForm()>0){
                     if (theLoaiDAO.inserTheLoai(theLoai) > 0) {
@@ -66,8 +68,11 @@ public class ProductActivity extends AppCompatActivity {
     }
 
     public void Show(View view) {
+        Intent intent=new Intent(this,ListProductActivity.class);
+        startActivity(intent);
     }
     private void inti() {
+
         btnThemMon = findViewById(R.id.btnAddTheLoai);
         edMaMon = findViewById(R.id.edMaMon);
         edTenMon = findViewById(R.id.edTenMon);

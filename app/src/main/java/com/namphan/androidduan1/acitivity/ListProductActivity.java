@@ -20,7 +20,7 @@ import com.namphan.androidduan1.model.TheLoai;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ListProductActivity extends AppCompatActivity {
+public class ListProductActivity extends AppCompatActivity  {
     public static List<TheLoai> dsTheLoai = new ArrayList<>();
     ListView lvTheLoai;
     ProductAdapter adapter = null;
@@ -40,15 +40,16 @@ public class ListProductActivity extends AppCompatActivity {
         adapter = new ProductAdapter(this, dsTheLoai);
         lvTheLoai.setAdapter(adapter);
 
+
         lvTheLoai.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent = new Intent(ListProductActivity.this, ProductDetailActivity.class);
                 Bundle b = new Bundle();
-
+                b.putString("MaMon", dsTheLoai.get(position).getMaMon());
                 b.putString("TenMon", dsTheLoai.get(position).getTenMon());
                 b.putString("Gia", String.valueOf(dsTheLoai.get(position).getGia()));
-
+                b.putString("MoTa", dsTheLoai.get(position).getMoTa());
 
                 intent.putExtras(b);
                 startActivity(intent);
@@ -99,6 +100,7 @@ public class ListProductActivity extends AppCompatActivity {
         inflater.inflate(R.menu.menu_context, menu);
         menu.setHeaderTitle("Chọn ");
     }
+
 
 
 

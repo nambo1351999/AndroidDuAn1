@@ -1,6 +1,7 @@
 package com.namphan.androidduan1;
 
 import android.Manifest;
+import android.app.ListActivity;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Location;
@@ -8,6 +9,8 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.Toast;
@@ -23,6 +26,8 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.namphan.androidduan1.acitivity.ListMapsACT;
+import com.namphan.androidduan1.acitivity.ListProductActivity;
+import com.namphan.androidduan1.acitivity.ProductActivity;
 import com.namphan.androidduan1.database.MapDao;
 import com.namphan.androidduan1.model.Maps;
 
@@ -89,11 +94,11 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             try {
                    Maps maps = new Maps(longitude,latitude);
                     if (mapDao.inserMap(maps) > 0) {
-                        Toast.makeText(getApplicationContext(), "Login successfulyy"+longitude+latitude, Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), ""+longitude+"AND"+latitude, Toast.LENGTH_SHORT).show();
                         Intent intent =new Intent(MapsActivity.this, ListMapsACT.class);
                         startActivity(intent);
                     } else {
-                        Toast.makeText(getApplicationContext(), "Account or password incorrect", Toast.LENGTH_SHORT).show();
+
 
                 }
             }catch (Exception ex){
@@ -230,6 +235,24 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             getCurrentLocation();
             moveMap();
         }
+    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_maps, menu);
+        return true;
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.addListGG:
+                Intent intent = new Intent(this, ListMapsACT.class);
+                startActivity(intent);
+                return (true);
+        }
+
+
+        return super.onOptionsItemSelected( item );
+
     }
 
 

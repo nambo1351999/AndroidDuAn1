@@ -79,11 +79,11 @@ public class UserDao {
             return -1;
         return 1;
     }
-    public int updateInfoNguoiDung(String fistname, String phone){
+    public int updateInfoNguoiDung(String email, String phone){
         ContentValues values = new ContentValues();
         values.put("phone",phone);
-        values.put("fistname",fistname);
-        int result = db.update(TABLE_NAME,values,"fistname=?", new String[]{fistname});
+        values.put("email",email);
+        int result = db.update(TABLE_NAME,values,"email=?", new String[]{email});
         if (result == 0){
             return -1;
         }         return 1;

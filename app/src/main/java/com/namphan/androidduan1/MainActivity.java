@@ -80,6 +80,7 @@ public class MainActivity extends AppCompatActivity {
 
     public int checkFrom() {
         int check=1;
+
         String fname=edFistName.getText().toString();
         String lname=edLastName.getText().toString();
         String pass=edPassword.getText().toString();

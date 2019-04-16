@@ -10,9 +10,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 
+import com.namphan.androidduan1.MapsActivity;
 import com.namphan.androidduan1.R;
 import com.namphan.androidduan1.database.MapDao;
 import com.namphan.androidduan1.model.Maps;
+import com.namphan.androidduan1.model.TheLoai;
 
 import java.util.List;
 
@@ -50,41 +52,43 @@ public class MapAdapter extends BaseAdapter {
         TextView txtLongtitui;
         TextView txtLatitui;
         ImageView imgDelete;
+        ImageView img;
     }
     @Override
     public View getView(final int position, View convertView, ViewGroup parent) {
-       ViewHolder holder;
+        final MapAdapter.ViewHolder holder;
         if(convertView==null)
         {
-            holder = new ViewHolder();
-            convertView = inflater.inflate(R.layout.item_maps,null);
-            holder.txtLongtitui =  convertView.findViewById(R.id.longtitu);
-            holder.txtLatitui = convertView.findViewById(R.id.latitui);
-
+            holder = new MapAdapter.ViewHolder();
+            convertView = inflater.inflate(R.layout.item_maps, null);
+            holder.img = convertView.findViewById(R.id.ivIcon);
+            holder.txtLongtitui= convertView.findViewById(R.id.tvLongtitui);
+            holder.txtLatitui =  convertView.findViewById(R.id.tvLatitui);
             holder.imgDelete = convertView.findViewById(R.id.ivDelete);
+
+
             holder.imgDelete.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    mapDao.deleteMapsID(arrMaps.get(position).getLongtitui()+"");
+                    mapDao.deleteMapsID(arrMaps.get(position).getLongtitui());
                     arrMaps.remove(position);
                     notifyDataSetChanged();
                 }
             });
             convertView.setTag(holder);
         }
+
         else
-            holder= (ViewHolder) convertView.getTag();
+            holder=(MapAdapter.ViewHolder)convertView.getTag();
 
-        Maps _entry =  arrMaps.get(position);
-
-        holder.txtLongtitui.setText(_entry.getLongtitui()+"");
+       Maps _entry =  arrMaps.get(position);
+        holder.img.setImageResource(R.drawable.cateicon);
         holder.txtLatitui.setText(_entry.getLatitui()+"");
-
+        holder.txtLongtitui.setText(_entry.getLongtitui()+"");
         return convertView;
     }
     @Override
-    public void notifyDataSetChanged()
-    {
+    public void notifyDataSetChanged() {
         super.notifyDataSetChanged();
     }
     public void changeDataset(List<Maps> items){

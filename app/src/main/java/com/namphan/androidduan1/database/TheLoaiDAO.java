@@ -45,7 +45,7 @@ public class TheLoaiDAO {
             ee.setMaMon(c.getString(0));
             ee.setTenMon(c.getString(1));
             ee.setMoTa(c.getString(2));
-            ee.setGia(c.getInt(3));
+            ee.setGia(Integer.parseInt(c.getString(3)));
             dsTheLoai.add(ee);
             Log.d("//=====",ee.toString());
             c.moveToNext();
@@ -72,17 +72,5 @@ public class TheLoaiDAO {
             return -1;
         return 1;
     }
-    public int thanhtoan() {
-        int vitri = 0;
-        db = dbHelper.getWritableDatabase();
-        String sql = "SELECT SUM(vitri) from " + TABLE_NAME;
-        Cursor cursor = db.rawQuery( sql, null );
-        cursor.moveToFirst();
-        while (cursor.isAfterLast() == false) {
-            vitri = cursor.getInt(0);
-            cursor.moveToNext();
-        }
-        cursor.close();
-        return vitri;
-    }
+
 }

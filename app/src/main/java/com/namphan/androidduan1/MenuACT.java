@@ -9,6 +9,8 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.namphan.androidduan1.acitivity.IntroductACT;
+import com.namphan.androidduan1.acitivity.ListCartACT;
 import com.namphan.androidduan1.acitivity.ListProductActivity;
 import com.namphan.androidduan1.acitivity.ListUserActivity;
 import com.namphan.androidduan1.acitivity.LoginActivity;
@@ -28,6 +30,8 @@ public class MenuACT extends AppCompatActivity {
     }
 
     public void viewCart(View view) {
+        Intent intent =new Intent(MenuACT.this, ListCartACT.class);
+        startActivity(intent);
     }
 
     public void viewGoogle(View view) {
@@ -38,6 +42,8 @@ public class MenuACT extends AppCompatActivity {
 
 
     public void ViewGioiThieu(View view) {
+        Intent intent=new Intent(this, IntroductACT.class);
+        startActivity(intent);
     }
 
     public void ViewProduct(View view) {
@@ -79,6 +85,11 @@ public class MenuACT extends AppCompatActivity {
             return true;
         }
         return super.onOptionsItemSelected( item );
+
+    }
+
+    public void viewHoaDoan(View view) {
+
 
     }
 }

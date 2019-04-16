@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/app"
+    tools:context=".acitivity.IntroductACT">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="INTRODUCE"
+
+            android:textColor="#fcfbfb"
+            android:textSize="25dp"
+            android:textStyle="bold"
+            android:layout_marginTop="15dp"
+            android:layout_gravity="center"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/iconlogo"/>
+
+        <TextView
+            style="@style/Base.TextAppearance.AppCompat.Small"
+            android:fontFamily="Roboto-Regular.ttf"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#fdfdfd"
+            android:text="@string/intro2"/>
+
+
+        <TextView
+            style="@style/Base.TextAppearance.AppCompat.Small"
+            android:layout_marginTop="5dp"
+            android:fontFamily="Roboto-Regular.ttf"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#f9f5f5"
+            android:text="@string/intro3"/>
+        <TextView
+            style="@style/Base.TextAppearance.AppCompat.Small"
+            android:layout_marginTop="5dp"
+            android:fontFamily="Roboto-Regular.ttf"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#f9f5f5"
+            android:text="@string/intro4"/>
+        <TextView
+            style="@style/Base.TextAppearance.AppCompat.Small"
+            android:layout_marginTop="5dp"
+            android:fontFamily="Roboto-Regular.ttf"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#f9f5f5"
+            android:text="@string/intro5"/>
+
+    </LinearLayout>
+
+</ScrollView>

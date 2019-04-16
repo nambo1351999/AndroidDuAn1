@@ -82,7 +82,9 @@ public class UserAdapter extends BaseAdapter {
             holder.img.setImageResource(R.drawable.emtwo);
         }else {
             holder.img.setImageResource(R.drawable.emthree);
-        }         holder.txtName.setText(_entry.getFistname());
+        }
+
+        holder.txtName.setText(_entry.getFistname());
         holder.txtPhone.setText(_entry.getPhone());
         return convertView;
     }

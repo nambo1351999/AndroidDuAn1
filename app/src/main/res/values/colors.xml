@@ -10,4 +10,6 @@
     <color name="blue">#00abea</color>
     <color name="white">#ffffff</color>
     <color name="screenBackgroundGrey">#f0f0f0</color>
+    <color name="colorGreen">#66ff66</color>
+    <color name="colorRed">#ff0000</color>
 </resources>

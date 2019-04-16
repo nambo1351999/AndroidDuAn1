@@ -14,13 +14,13 @@ import java.util.List;
 
 public class MapDao {
     private SQLiteDatabase db;
-    private DatabaseHelper dbHelper;
-    public static final String TABLE_NAME1="Map";
+    private DatabaseHelper2 dbHelper2;
+    public static final String TABLE_NAME1="Maps";
     public static final String SQL_MAP = "CREATE TABLE Maps (longtitui double primary key ,latitui double );";
     public static final String TAG="MapsDao";
     public MapDao(Context context){
-        dbHelper= new DatabaseHelper(context);
-        db = dbHelper.getWritableDatabase();
+        dbHelper2= new DatabaseHelper2(context);
+        db = dbHelper2.getWritableDatabase();
     }
 
 
@@ -35,7 +35,7 @@ public class MapDao {
                return 1;     }
     //getA
     public List<Maps> getAllMaps()  {
-        db = dbHelper.getReadableDatabase();
+        db = dbHelper2.getReadableDatabase();
         List<Maps> dsMaps=new ArrayList<>();
         Cursor cursor =db.query(TABLE_NAME1,null,null,null,null,null,null);
         cursor.moveToFirst();
@@ -55,24 +55,12 @@ public class MapDao {
 
     }
 
-    public int deleteMapsID(String longtitui){
-        int result = db.delete(TABLE_NAME1,"longtitui=?",new String[]{longtitui});
+    public int deleteMapsID(Double longtitui){
+        int result = db.delete(TABLE_NAME1,"longtitui=?",new String[]{longtitui+""});
         if (result == 0)
             return -1;
         return 1;
     }
-    public int updateMaps(String fistname, String phone){
-        ContentValues values = new ContentValues();
-        values.put("phone",phone);
-        values.put("fistname",fistname);
-        int result = db.update(TABLE_NAME1,values,"fistname=?", new String[]{fistname});
-        if (result == 0){
-            return -1;
-        }         return 1;
-    }
-
-
-
 
 
 

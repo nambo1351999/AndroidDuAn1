@@ -11,4 +11,22 @@
     <string name="udap_user">Lưu thành công</string>
     <string name="main">Login successfulyy</string>
     <string name="main2">Account or password incorrect</string>
+    <string name="cart1">Add to cart successfully</string>
+    <string name="cart2">Add to cart failed</string>
+
+
+    <!-- Info-->
+    <string name="intro2">
+       The Coffee House is one of the few companies in the retail sector that has a good and really useful app,
+         You can order fast food delivered directly from the app, besides having a coffee shop with friends. And when you place a drink from the app, with a customer-focused motto, Helio is constantly striving for dedicated and creative work to bring the best variety of products and services to the customer. line. The Coffee House is confident that it will stand firm and thrive in both domestic and foreign markets.
+    </string>
+    <string name="intro3">
++ Order and payment at the table without the presence of staff.
+    </string>
+    <string name="intro4">
+ + Automatically selects exactly where you are sitting with the GPRS positioning feature.
+    </string>
+    <string name="intro5">
+    + Menu varies according to your daily consumption habits.
+    </string>
 </resources>

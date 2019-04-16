@@ -45,7 +45,7 @@ public class LoginActivity extends AppCompatActivity {
             startActivity(intent);
             finish();
             // tên đăng nhập admin
-        } else  if(email.equalsIgnoreCase("admin")||pass.equalsIgnoreCase("admin")){
+        } else  if(email.equalsIgnoreCase("admin")&&pass.equalsIgnoreCase("admin")){
             Intent intent =new Intent(LoginActivity.this, MenuACT.class);
             startActivity(intent);
         }else{

@@ -6,24 +6,33 @@
     android:gravity="center"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@drawable/img1"
     tools:context=".acitivity.UserDetail">
 
     <TextView
+        android:textColorHint="@color/colorWhite"
+        android:textColor="@color/colorWhite"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Số điện thoại:"   />
     <EditText
+        android:textColorHint="@color/colorWhite"
+        android:textColor="@color/colorWhite"
         android:background="@drawable/edit"
         android:id="@+id/edPhone"
         android:layout_marginBottom="10dp"
         android:layout_width="match_parent"
         android:layout_height="50dp"     />
     <TextView
+        android:textColorHint="@color/colorWhite"
+        android:textColor="@color/colorWhite"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Email:"
         />
     <EditText
+        android:textColorHint="@color/colorWhite"
+        android:textColor="@color/colorWhite"
         android:background="@drawable/edit"
         android:layout_marginBottom="10dp"
         android:id="@+id/edFullName"
