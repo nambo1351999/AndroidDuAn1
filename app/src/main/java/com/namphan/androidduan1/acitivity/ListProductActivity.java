@@ -100,6 +100,23 @@ public class ListProductActivity extends AppCompatActivity  {
         inflater.inflate(R.menu.menu_context, menu);
         menu.setHeaderTitle("Chọn ");
     }
+    @Override
+    public boolean onContextItemSelected(MenuItem item) {
+        switch(item.getItemId()) {
+            case R.id.menu_ctx_edit:
+                Intent intent1 = new Intent(ListProductActivity.this,EditProductACT.class);
+                startActivity(intent1);
+                return(true);
+            case R.id.menu_ctx_del:
+                Intent intent2 = new Intent(this,EditProductACT.class);
+                startActivity(intent2);
+                return(true);
+
+
+        }
+        return super.onContextItemSelected(item);
+
+    }
 
 
 

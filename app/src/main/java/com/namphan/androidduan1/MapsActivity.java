@@ -75,14 +75,14 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         buttonSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                okok();
+                addMap();
             }
         });
         buttonCurrent.setOnClickListener(this);
 
     }
 
-    private void okok() {
+    private void addMap() {
         Location location = LocationServices.FusedLocationApi.getLastLocation(googleApiClient);
         if (location != null) {
 

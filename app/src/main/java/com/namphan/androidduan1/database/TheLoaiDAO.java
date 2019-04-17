@@ -21,6 +21,9 @@ public class TheLoaiDAO {
         dbHelper = new DatabaseHelper1(context);
         db = dbHelper.getWritableDatabase();
     }
+
+
+
     //insert
     public int inserTheLoai(TheLoai theLoai){
         ContentValues values = new ContentValues();
@@ -72,5 +75,6 @@ public class TheLoaiDAO {
             return -1;
         return 1;
     }
+
 
 }

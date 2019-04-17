@@ -14,13 +14,13 @@ import java.util.List;
 
 public class MapDao {
     private SQLiteDatabase db;
-    private DatabaseHelper2 dbHelper2;
+    private DatabaseHelper2 dbHelpers;
     public static final String TABLE_NAME1="Maps";
     public static final String SQL_MAP = "CREATE TABLE Maps (longtitui double primary key ,latitui double );";
     public static final String TAG="MapsDao";
     public MapDao(Context context){
-        dbHelper2= new DatabaseHelper2(context);
-        db = dbHelper2.getWritableDatabase();
+        dbHelpers= new DatabaseHelper2(context);
+        db = dbHelpers.getWritableDatabase();
     }
 
 
@@ -28,14 +28,21 @@ public class MapDao {
     public int inserMap(Maps maps){
 
         ContentValues values = new ContentValues();
-        values.put("longitui",maps.getLongtitui());
+        values.put("longtitui",maps.getLongtitui());
         values.put("latitui",maps.getLatitui());
+        try {
+            if(db.insert(TABLE_NAME1,null,values)== -1){
+                return -1;
+            }
+        }catch (Exception ex){
+            Log.e(TAG,ex.toString());
+        }
 
 
-               return 1;     }
+        return 1;     }
     //getA
     public List<Maps> getAllMaps()  {
-        db = dbHelper2.getReadableDatabase();
+        db = dbHelpers.getReadableDatabase();
         List<Maps> dsMaps=new ArrayList<>();
         Cursor cursor =db.query(TABLE_NAME1,null,null,null,null,null,null);
         cursor.moveToFirst();
