@@ -4,7 +4,7 @@
         android:id="@+id/menu_ctx_edit"
 
         ></item>
-    <item android:title="Xoá"
+    <item android:title="Xóa"
         android:id="@+id/menu_ctx_del"
 
         ></item>

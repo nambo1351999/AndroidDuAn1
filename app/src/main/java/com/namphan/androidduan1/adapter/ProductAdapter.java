@@ -8,22 +8,23 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.ImageView;
+import android.widget.RadioButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.namphan.androidduan1.R;
 
-import com.namphan.androidduan1.acitivity.ProductCartACT;
-import com.namphan.androidduan1.acitivity.UserDetail;
+
 import com.namphan.androidduan1.database.TheLoaiDAO;
+
 import com.namphan.androidduan1.model.TheLoai;
 
 import java.util.List;
 
-import javax.security.auth.callback.Callback;
 
-import static com.namphan.androidduan1.acitivity.ListProductActivity.dsTheLoai;
-import static com.namphan.androidduan1.acitivity.ListUserActivity.dsUser;
 
 public class ProductAdapter extends BaseAdapter {
     List<TheLoai> arrTheLoai;
@@ -87,18 +88,18 @@ public class ProductAdapter extends BaseAdapter {
                 public void onClick(View v) {
                     theLoaiDAO.deleteTheLoaiByID(arrTheLoai.get(position).getMaMon());
 
-                     arrTheLoai.remove(position);
-                        notifyDataSetChanged();
-            }
-        });
-        convertView.setTag(holder);
+                    arrTheLoai.remove(position);
+                    notifyDataSetChanged();
+                }
+            });
+            convertView.setTag(holder);
 
-    }
+        }
 
-    else
-          holder=(ViewHolder)convertView.getTag();
+        else
+            holder=(ViewHolder)convertView.getTag();
 
-    TheLoai _entry =  arrTheLoai.get(position);
+        TheLoai _entry =  arrTheLoai.get(position);
 
         if (position % 3 ==0) {
             holder.img.setImageResource(R.drawable.cafeden);
@@ -109,17 +110,17 @@ public class ProductAdapter extends BaseAdapter {
         }
 
 
-    holder.txtMaTheLoai.setText(_entry.getGia()+" $");
-    holder.txtTenTheLoai.setText(_entry.getTenMon());
-         return convertView;
-       }
+        holder.txtMaTheLoai.setText(_entry.getGia()+" $");
+        holder.txtTenTheLoai.setText(_entry.getTenMon());
+        return convertView;
+    }
     @Override
     public void notifyDataSetChanged() {
-    super.notifyDataSetChanged();
-}
+        super.notifyDataSetChanged();
+    }
     public void changeDataset(List<TheLoai> items){
-    this.arrTheLoai = items;
-    notifyDataSetChanged();
+        this.arrTheLoai = items;
+        notifyDataSetChanged();
     }
 
 }

@@ -19,6 +19,7 @@ import com.namphan.androidduan1.database.UserDao;
 import com.namphan.androidduan1.model.Cart;
 import com.namphan.androidduan1.model.TheLoai;
 import com.namphan.androidduan1.model.User;
+import com.nex3z.notificationbadge.NotificationBadge;
 
 public class ProductDetailActivity extends AppCompatActivity {
     ImageView btnThemProduct;
@@ -28,11 +29,13 @@ public class ProductDetailActivity extends AppCompatActivity {
     CartDao cartDao;
 
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sproduct);
-        setTitle("CHI TIẾT THỂ LOẠI");
+        setTitle("Sản Phẩm");
         btnThemProduct=findViewById(R.id.btnAddTheLoai);
         edMaMon=findViewById(R.id.edMaTheLoai);
         edTenMon=findViewById(R.id.edTenTheLoai);
@@ -50,6 +53,9 @@ public class ProductDetailActivity extends AppCompatActivity {
         edGia.setText(Gia);
         edMoTa.setText(MoTa);
 
+
+
+
     }
 
 
@@ -59,6 +65,7 @@ public class ProductDetailActivity extends AppCompatActivity {
                 Cart cart = new Cart(edMaMon.getText().toString(), edTenMon.getText().toString(), edMoTa.getText().toString(),Integer.parseInt(edGia.getText().toString()));
                 if (cartDao.inserCart(cart) > 0) {
                     Toast.makeText(getApplicationContext(), R.string.cart1, Toast.LENGTH_SHORT).show();
+
 
                 } else {
                     Toast.makeText(getApplicationContext(), R.string.cart2, Toast.LENGTH_SHORT).show();

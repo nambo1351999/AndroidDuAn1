@@ -8,6 +8,7 @@
     tools:context=".acitivity.ListProductActivity">
 
 
+
     <ListView
         android:id="@+id/lvTheLoai"
         android:layout_width="match_parent"
@@ -16,5 +17,6 @@
         android:layout_marginTop="8dp">
 
     </ListView>
+
 
 </LinearLayout>

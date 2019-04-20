@@ -29,13 +29,8 @@ public class CartDao {
         values.put("tenmon",cart.getTenMon());
         values.put("mota",cart.getMoTa());
         values.put("gia",cart.getGia());
-        try {
-            if(db.insert(TABLE_NAME,null,values)== -1){
-                return -1;
-            }
-        }catch (Exception ex){
-            Log.e(TAG,ex.toString());
-        }         return 1;
+        long restur=db.insert(TABLE_NAME,null,values);
+     return 1;
     }
     public List<Cart> getAllCart(){
         List<Cart> dsCart = new ArrayList<>();

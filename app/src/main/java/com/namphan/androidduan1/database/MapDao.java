@@ -68,6 +68,16 @@ public class MapDao {
             return -1;
         return 1;
     }
+    public int changeMaps(Maps maps){
+        ContentValues values = new ContentValues();
+        values.put("longtitui",maps.getLongtitui());
+        values.put("latitui",maps.getLatitui());
+        int result = db.update(TABLE_NAME1,values,"longtitui=?", new String[]{maps.getLongtitui()+""});
+        if (result == 0){
+            return -1;
+        }
+        return 1;
+    }
 
 
 

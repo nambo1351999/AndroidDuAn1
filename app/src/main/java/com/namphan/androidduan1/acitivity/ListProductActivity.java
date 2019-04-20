@@ -11,7 +11,6 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
-import com.namphan.androidduan1.MapsActivity;
 import com.namphan.androidduan1.R;
 import com.namphan.androidduan1.adapter.ProductAdapter;
 import com.namphan.androidduan1.database.TheLoaiDAO;
@@ -20,10 +19,12 @@ import com.namphan.androidduan1.model.TheLoai;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ListProductActivity extends AppCompatActivity  {
+public class ListProductActivity extends AppCompatActivity {
     public static List<TheLoai> dsTheLoai = new ArrayList<>();
     ListView lvTheLoai;
     ProductAdapter adapter = null;
+    private static int cart_count=0;
+
 
     TheLoaiDAO theLoaiDAO;
 
@@ -45,7 +46,9 @@ public class ListProductActivity extends AppCompatActivity  {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent = new Intent(ListProductActivity.this, ProductDetailActivity.class);
+
                 Bundle b = new Bundle();
+                Bundle b1 = new Bundle();
                 b.putString("MaMon", dsTheLoai.get(position).getMaMon());
                 b.putString("TenMon", dsTheLoai.get(position).getTenMon());
                 b.putString("Gia", String.valueOf(dsTheLoai.get(position).getGia()));
@@ -53,6 +56,7 @@ public class ListProductActivity extends AppCompatActivity  {
 
                 intent.putExtras(b);
                 startActivity(intent);
+
 
             }
         });
@@ -68,6 +72,7 @@ public class ListProductActivity extends AppCompatActivity  {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_theloai, menu);
+
         return true;
     }
 
@@ -81,7 +86,7 @@ public class ListProductActivity extends AppCompatActivity  {
         }
 
 
-        return super.onOptionsItemSelected( item );
+        return super.onOptionsItemSelected(item);
 
     }
 
@@ -100,23 +105,28 @@ public class ListProductActivity extends AppCompatActivity  {
         inflater.inflate(R.menu.menu_context, menu);
         menu.setHeaderTitle("Chọn ");
     }
+
     @Override
     public boolean onContextItemSelected(MenuItem item) {
-        switch(item.getItemId()) {
+        switch (item.getItemId()) {
             case R.id.menu_ctx_edit:
-                Intent intent1 = new Intent(ListProductActivity.this,EditProductACT.class);
+                Intent intent1 = new Intent(ListProductActivity.this, EditProductACT.class);
                 startActivity(intent1);
-                return(true);
+                return (true);
             case R.id.menu_ctx_del:
-                Intent intent2 = new Intent(this,EditProductACT.class);
+                Intent intent2 = new Intent(this, EditProductACT.class);
                 startActivity(intent2);
-                return(true);
+                return (true);
 
 
         }
         return super.onContextItemSelected(item);
 
     }
+
+
+
+
 
 
 

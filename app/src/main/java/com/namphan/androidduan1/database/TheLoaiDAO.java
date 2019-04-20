@@ -75,6 +75,20 @@ public class TheLoaiDAO {
             return -1;
         return 1;
     }
+    public int getSoHang() {
+        int vitri = 0;
+        db = dbHelper.getWritableDatabase();
+        String sql = "SELECT COUNT(vitri) from " + TABLE_NAME;
+        Cursor cursor = db.rawQuery( sql, null );
+        cursor.moveToFirst();
+        while (cursor.isAfterLast() == false) {
+            vitri = cursor.getInt( 0 );
+            cursor.moveToNext();
+        }
+        cursor.close();
+        return vitri;
+    }
+
 
 
 }

@@ -6,8 +6,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.CompoundButton;
 import android.widget.ImageView;
+import android.widget.RadioButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 import com.namphan.androidduan1.MapsActivity;
@@ -81,8 +84,8 @@ public class MapAdapter extends BaseAdapter {
         else
             holder=(MapAdapter.ViewHolder)convertView.getTag();
 
-       Maps _entry =  arrMaps.get(position);
-        holder.img.setImageResource(R.drawable.cateicon);
+        Maps _entry =  arrMaps.get(position);
+        holder.img.setImageResource(R.drawable.google);
         holder.txtLatitui.setText(_entry.getLatitui()+"");
         holder.txtLongtitui.setText(_entry.getLongtitui()+"");
         return convertView;

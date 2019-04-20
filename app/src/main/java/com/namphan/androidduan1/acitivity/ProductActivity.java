@@ -20,6 +20,7 @@ public class ProductActivity extends AppCompatActivity {
 
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,6 +37,7 @@ public class ProductActivity extends AppCompatActivity {
                 if (validateForm()>0){
                     if (theLoaiDAO.inserTheLoai(theLoai) > 0) {
                         Toast.makeText(getApplicationContext(), R.string.add_product, Toast.LENGTH_SHORT).show();
+
                     } else {
                         Toast.makeText(getApplicationContext(), R.string.delteproduct, Toast.LENGTH_SHORT).show();
                     }

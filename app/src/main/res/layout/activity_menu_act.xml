@@ -118,12 +118,12 @@
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:onClick="viewHoaDoan"
-                    android:src="@drawable/analysis" />
+                    android:src="@drawable/discount" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Thống Kê"
+                    android:text="Sale"
                     android:textSize="16sp" />
             </LinearLayout>
 
@@ -150,20 +150,63 @@
 
         </LinearLayout>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
     </TableLayout>
+
+
+
+
+
+
+
+    <FrameLayout
+
+        android:layout_gravity="bottom|end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="5dp">
+
+        <ImageView
+            android:layout_gravity="bottom|end"
+            android:id="@+id/icon_badge"
+            android:layout_width="70dp"
+
+            android:layout_height="70dp"
+            android:src="@drawable/cart" />
+
+
+        <FrameLayout
+            android:id="@+id/counterValuePanel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end|top">
+
+            <TextView
+
+                android:id="@+id/count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/editboder2"
+                android:gravity="center"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:text="1"
+                android:textColor="#ffffff"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+
+        </FrameLayout>
+
+
+    </FrameLayout>
+    <ImageView
+        android:layout_gravity="bottom|end"
+        android:id="@+id/phone"
+        android:layout_width="70dp"
+
+        android:background="@drawable/editboder"
+        android:layout_height="70dp"
+        android:src="@drawable/phone1" />
 
 
 </LinearLayout>

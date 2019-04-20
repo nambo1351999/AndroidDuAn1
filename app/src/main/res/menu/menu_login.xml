@@ -2,6 +2,11 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
+        android:id="@+id/action_Listmap"
+        android:orderInCategory="100"
+        android:title="Google Maps"
+        app:showAsAction="never" />
+    <item
         android:id="@+id/action_settings"
         android:orderInCategory="100"
         android:title="Logout"
@@ -11,5 +16,6 @@
         android:orderInCategory="100"
         android:title="Exit"
         app:showAsAction="never" />
+
 
 </menu>

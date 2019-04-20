@@ -18,7 +18,7 @@ public class EditProductACT extends AppCompatActivity {
    Button btnThemProduct;
     TheLoaiDAO theLoaiDAO;
     TextView edMaMon,edTenMon,edGia,edMoTa;
-    String MaMon,TenMon,Gia,MoTa;
+    String MaMon1,TenMon1,Gia1,MoTa1;
 
 
     @Override
@@ -32,22 +32,19 @@ public class EditProductACT extends AppCompatActivity {
         edGia=findViewById(R.id.edViTri);
         edMoTa=findViewById(R.id.edMoTa);
         theLoaiDAO=new TheLoaiDAO(this);
-        theLoaiDAO=new TheLoaiDAO(this);
-        Intent in=getIntent();
-        Bundle b=in.getExtras();
-        MaMon=b.getString("MaMon");
-        TenMon=b.getString("TenMon");
-        Gia=b.getString("Gia");
-        MoTa=b.getString("MoTa");
-        edMaMon.setText(MaMon);
-        edTenMon.setText(TenMon);
-        edGia.setText(Gia);
-        edMoTa.setText(MoTa);
+
+
 
     }
 
     public void addSaveProduct(View view) {
+        TheLoai theLoai=new TheLoai();
+        if (theLoaiDAO.updateTheLoai(theLoai) > 0) {
+            Toast.makeText(getApplicationContext(), R.string.udap_user, Toast.LENGTH_SHORT).show();
 
+    }else {
+        Toast.makeText(this, "Error", Toast.LENGTH_SHORT).show();
+    }
     }
 
     public void Huy(View view) {

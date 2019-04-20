@@ -13,7 +13,8 @@
     <string name="main2">Account or password incorrect</string>
     <string name="cart1">Add to cart successfully</string>
     <string name="cart2">Add to cart failed</string>
-
+    <string name="action_Cart">Cart</string>
+    <string name="action_Notification">Notification</string>
 
     <!-- Info-->
     <string name="intro2">

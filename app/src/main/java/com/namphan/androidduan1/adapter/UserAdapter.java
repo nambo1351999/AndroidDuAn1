@@ -62,6 +62,7 @@ public class UserAdapter extends BaseAdapter {
             holder.txtName = convertView.findViewById(R.id.tvName);
             holder.txtPhone =  convertView.findViewById(R.id.tvPhone);
             holder.imgDelete = convertView.findViewById(R.id.ivDelete);
+
             holder.imgDelete.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -89,7 +90,7 @@ public class UserAdapter extends BaseAdapter {
         return convertView;
     }
     @Override
-    public void notifyDataSetChanged()
+    public void notifyDataSetChanged() 
     {
         super.notifyDataSetChanged();
     }

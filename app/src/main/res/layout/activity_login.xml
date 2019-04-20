@@ -69,6 +69,16 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
     </LinearLayout>
+    <CheckBox
+        android:textSize="15dp"
+        android:textStyle="bold"
+        android:buttonTint="@color/colorWhite"
+        android:textColor="@color/colorWhite"
+        android:layout_margin="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Lưu mật khẩu"
+        android:id="@+id/chkRememberPass"       />
 
     <Button
         android:id="@+id/Login"

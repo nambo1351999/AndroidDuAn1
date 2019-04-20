@@ -5,6 +5,15 @@ public class TheLoai {
     private String tenMon;
     private String moTa;
     private int gia;
+    private boolean addedTocart = false;
+
+    public boolean isAddedTocart() {
+        return addedTocart;
+    }
+
+    public void setAddedTocart(boolean addedTocart) {
+        this.addedTocart = addedTocart;
+    }
 
     public TheLoai() {
     }
