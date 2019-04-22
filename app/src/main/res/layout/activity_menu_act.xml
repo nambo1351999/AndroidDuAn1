@@ -118,12 +118,12 @@
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:onClick="viewHoaDoan"
-                    android:src="@drawable/discount" />
+                    android:src="@drawable/notepad" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Sale"
+                    android:text="Notes customer"
                     android:textSize="16sp" />
             </LinearLayout>
 
@@ -142,7 +142,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Giới thiệu"
+                    android:text="Introduce"
                     android:textSize="16sp" />
 
             </LinearLayout>

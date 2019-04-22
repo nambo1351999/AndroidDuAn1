@@ -9,7 +9,6 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -19,7 +18,6 @@ import com.namphan.androidduan1.acitivity.ListMapsACT;
 import com.namphan.androidduan1.acitivity.ListProductActivity;
 import com.namphan.androidduan1.acitivity.ListUserActivity;
 import com.namphan.androidduan1.acitivity.LoginActivity;
-import com.namphan.androidduan1.acitivity.ProductActivity;
 import com.namphan.androidduan1.database.TheLoaiDAO;
 
 public class MenuACT extends AppCompatActivity {
@@ -125,7 +123,7 @@ public class MenuACT extends AppCompatActivity {
     }
 
     public void viewHoaDoan(View view) {
-        Intent intent1=new Intent(MenuACT.this, MapsActivity.class);
+        Intent intent1=new Intent(MenuACT.this, NotesListActivity.class);
         startActivity(intent1);
 
 

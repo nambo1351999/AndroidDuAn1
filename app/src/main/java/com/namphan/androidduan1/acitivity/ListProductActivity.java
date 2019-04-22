@@ -48,7 +48,7 @@ public class ListProductActivity extends AppCompatActivity {
                 Intent intent = new Intent(ListProductActivity.this, ProductDetailActivity.class);
 
                 Bundle b = new Bundle();
-                Bundle b1 = new Bundle();
+
                 b.putString("MaMon", dsTheLoai.get(position).getMaMon());
                 b.putString("TenMon", dsTheLoai.get(position).getTenMon());
                 b.putString("Gia", String.valueOf(dsTheLoai.get(position).getGia()));

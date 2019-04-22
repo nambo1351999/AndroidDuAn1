@@ -3,11 +3,14 @@ package com.namphan.androidduan1.acitivity;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.namphan.androidduan1.MapsActivity;
 import com.namphan.androidduan1.R;
 import com.namphan.androidduan1.adapter.MapAdapter;
 import com.namphan.androidduan1.database.MapDao;
@@ -34,8 +37,18 @@ public class ListMapsACT extends AppCompatActivity {
         lvMaps.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
                 Toast.makeText(getApplicationContext(), "Bạn đã chọn địa chỉ thành công", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(ListMapsACT.this,MapsActivity.class);
+
+
+                Bundle b = new Bundle();
+
+                b.putDouble("Latitui", dsMaps.get(position).getLatitui());
+                b.putDouble("Longtitui", dsMaps.get(position).getLongtitui());
+
+
+                intent.putExtras(b);
+                startActivity(intent);
 
 
 
@@ -49,6 +62,26 @@ public class ListMapsACT extends AppCompatActivity {
         });
 
     }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_theloai, menu);
+
+        return true;
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.addThem:
+                Intent intent = new Intent(this, MapsActivity.class);
+                startActivity(intent);
+                return (true);
+        }
+
+
+        return super.onOptionsItemSelected(item);
+
+    }
+
 
 
 

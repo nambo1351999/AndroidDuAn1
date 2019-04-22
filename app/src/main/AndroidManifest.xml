@@ -20,13 +20,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".acitivity.SaleActivity"></activity>
         <activity android:name=".acitivity.EditProductACT" />
         <activity android:name=".acitivity.ListCartACT" />
         <activity android:name=".acitivity.ProductCartACT" />
-        <activity android:name=".acitivity.IntroductACT" />
+        <activity android:name=".acitivity.IntroductACT" android:theme="@style/AppTheme.NoBar"></activity>
         <activity android:name=".MenuACT" />
-        <activity android:name=".acitivity.ListMapsACT" />
+        <activity android:name=".acitivity.ListMapsACT"  />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -43,12 +42,24 @@
             android:name=".MapsActivity"
             android:label="@string/title_activity_maps" />
         <activity android:name=".acitivity.ListUserActivity" />
-        <activity android:name=".acitivity.LoginActivity" />
+        <activity android:name=".acitivity.LoginActivity"
+            android:theme="@style/AppTheme.NoBar">
+        </activity>
+
         <activity android:name=".acitivity.UserDetail" />
         <activity android:name=".acitivity.ListProductActivity" />
         <activity android:name=".acitivity.ProductDetailActivity" />
         <activity android:name=".acitivity.ProductActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".NotesListActivity"
+            android:theme="@style/AppTheme.NoBar">
+
+
+        </activity>
+        <activity android:name=".NoteActivity"
+            android:theme="@style/AppTheme.NoBar">
+        </activity>
+        <activity android:name=".MainActivity"
+            android:theme="@style/AppTheme.NoBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -56,5 +67,6 @@
             </intent-filter>
         </activity>
     </application>
+
 
 </manifest>
